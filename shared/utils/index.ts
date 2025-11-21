@@ -13,3 +13,13 @@ export function createApiResponse<T>(
     error,
   };
 }
+
+export function createServiceError(
+  message: string,
+  statusCode: number = 500,
+  code?: string,
+  details?: any
+
+) : ServiceError {
+  return new ServiceError(message, statusCode, code, details);
+}
